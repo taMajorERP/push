@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "52819290069",
+    "project_id": "pushdemo-6ff81",
+    "storage_bucket": "pushdemo-6ff81.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:52819290069:android:dfc16791e7e90ad2583f5c",
+        "android_client_info": {
+          "package_name": "hu.erp.pushdemo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQH07iyDx8x0WAc7gvxh4d-Naamxfg0Ac"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

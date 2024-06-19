@@ -1,0 +1,11 @@
+get https://pushDemoErp.servicebus.windows.net/pushDemoErp/registrations/?api-version=2015-01
+Authorization: SharedAccessSignature sr=https%3A%2F%2FpushDemoErp.servicebus.windows.net%2FpushDemoErp%2Fregistrations%2F%3Fapi-version%3D2015-01&sig=vOi%2FlGZAODoQBBwgTDetm4FT0gVEJ26gFIUpOk9KEZI%3D&se=1721209046&skn=DefaultFullSharedAccessSignature
+x-ms-version: 2015-01
+Content-Type: application/atom+xml;type=entry;charset=utf-8
+
+###
+DELETE https://pushDemoErp.servicebus.windows.net/pushDemoErp/registrations/5322675523217157022-7928758173931624205-3?api-version=2015-01
+Authorization: SharedAccessSignature sr=https%3A%2F%2FpushDemoErp.servicebus.windows.net%2FpushDemoErp%2Fregistrations%2F%3Fapi-version%3D2015-01&sig=vOi%2FlGZAODoQBBwgTDetm4FT0gVEJ26gFIUpOk9KEZI%3D&se=1721209046&skn=DefaultFullSharedAccessSignature
+x-ms-version: 2015-01
+Content-Type: application/atom+xml;type=entry;charset=utf-8
+If-Match: *
