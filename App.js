@@ -10,6 +10,7 @@ import createSharedAccessToken from './getSasToken';
 export default function App() {
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [registrationId, setRegistrationId] = useState(null);
+  const [azureTags, setAzureTags] = useState([]);
 
   const requestUserPermission = async () => {
     const authStatus = await messaging().requestPermission();
@@ -36,6 +37,7 @@ export default function App() {
       <content type="application/xml">
           <FcmV1RegistrationDescription xmlns:i="http://www.w3.org/2001/XMLSchema-instance"
               xmlns="http://schemas.microsoft.com/netservices/2010/10/servicebus/connect">
+              <Tags>myTag,myOtherTag</Tags>
               <FcmV1RegistrationId>${token}</FcmV1RegistrationId>
           </FcmV1RegistrationDescription>
       </content>
@@ -66,8 +68,11 @@ export default function App() {
             return;
           }
           const registrationId = result.entry.content[0].FcmV1RegistrationDescription[0].RegistrationId[0];
+          const tags = result.entry.content[0].FcmV1RegistrationDescription[0].Tags[0];
           setRegistrationId(registrationId);
+          setAzureTags(tags);
           console.log(registrationId)
+          console.log(azureTags)
           setIsSubscribed(true);
         });
       } catch (error) {
@@ -179,16 +184,6 @@ export default function App() {
             content: notification,
             trigger: null,
           });
-        });
-
-        messaging().onNotificationOpenedApp((remoteMessage) => {
-          // Add navigation logic here if needed
-        });
-
-        messaging().getInitialNotification().then((remoteMessage) => {
-          if (remoteMessage) {
-            // Add navigation logic here if needed
-          }
         });
 
         return () => {
